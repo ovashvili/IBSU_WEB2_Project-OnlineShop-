@@ -1,0 +1,156 @@
+body
+{ 
+	font-family: 'Play', sans-serif;
+	background-color: #D3D3D3;
+}
+.menu 
+{
+	background-color: #087275;
+	overflow: hidden;
+	position: fixed; 
+	z-index: 1;
+	top: 0; 
+	left: 0;
+	right: 0;
+	width: 100%;
+	opacity: 0.99;
+}
+
+.menu a
+{
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 20px 20px;
+	font-family: 'Play', sans-serif;
+	text-decoration: none;
+	font-size: 24px;
+}
+
+.menu a:hover
+{
+	background-color: #ddd;
+	color: black;
+}
+
+.current
+{
+	font-family: 'Play', sans-serif;
+	font-weight: 700;
+	background-color: #065f61;
+	color: white;
+}
+
+.menu .icon
+{
+	display: none;
+}
+
+
+.dropdown
+{
+	float: left;
+	overflow: hidden;
+	top: 0;
+	z-index: 1;
+}
+
+.dropdown .dropbtn
+{
+	font-size: 24px;
+	border: none;
+	outline: none;
+	color: #f2f2f2;
+	padding: 20px 20px;
+	background-color: inherit;
+	font-family: 'Play', sans-serif;
+	margin: 0;
+}
+
+.dropdown-content
+{
+  display: none;
+  position: fixed;
+  background-color: #f9f9f9;
+  font-family: 'Play', sans-serif;
+  font-weight: 400;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a
+{
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+
+.menu a:hover, .dropdown:hover .dropbtn
+{
+	background-color: #ddd;
+	color: black;
+}
+
+.dropdown-content a:hover
+{
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+@media screen and (max-width: 768px)
+{
+	.menu a:not(:nth-child(1)):not(:nth-child(8)), .dropdown .dropbtn  { opacity: 0.9; }
+	.menu a:not(:nth-child(1)), .dropdown .dropbtn {display: none;}
+	.menu a.icon
+	{
+		float: right;
+		display: block;
+	}
+
+}
+p { padding-top: 50px; }
+@media screen and (max-width: 768px)
+{
+	.menu.vertical { position: fixed; }
+	.menu.vertical a.icon
+	{
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.menu.vertical a
+	{
+		float: none;
+		display: block;
+		text-align: left;
+	}
+	.menu.vertical .dropdown {float: none;}
+	.menu.vertical .dropdown-content {position: relative;}
+	.menu.vertical .dropdown .dropbtn
+	{
+		display: block;
+		width: 100%;
+		text-align: left;
+	}
+}
+footer
+{
+	position: fixed;
+	left: 0;
+	padding: 5px;
+	bottom: 0;
+	width: 100%;
+	color: #f2f2f2;
+	background-color: #087275;
+}

@@ -1,0 +1,202 @@
+body
+{
+  color: #333;
+  /*font-family: "Raleway", Arial, Helvetica, serif;*/
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+h1
+{
+	background: #065f61;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 500;
+	text-align: center;
+	padding: 0.5em;
+	margin: 5% 0 3% 0;
+}
+
+img
+{
+  margin: auto;
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+
+.cardBox
+{
+  float: left;
+  font-size: 1.2em;
+  margin: 1% 0 0 1%;
+  perspective: 800px;
+  transition: all 0.3s ease 0s;
+  width: 23.7%;
+}
+
+.cardBox:hover .card
+{
+  transform: rotateY( 180deg);
+}
+
+.card
+{
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+	background: #065f61;
+	border-radius: 7px;
+	cursor: default;
+	height: 300px;
+	transform-style: preserve-3d;
+	transition: transform 0.4s ease 0s;
+	width: 100%;
+	-webkit-animation: anim 1s 1;
+	animation: anim 1s 1;
+	margin: 0% 0  13% 0;
+}
+
+.card p
+{
+  margin-bottom: 1.8em;
+}
+
+.card .front,
+.card .back
+{
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  border-radius: 7px;
+  color: white;
+  display: block;
+  font-size: 1.2em;
+  height: 100%;
+  padding: 0.8em;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.card .front
+{ 
+  display: flex;
+  justify-content: center;
+}
+
+.card .front strong
+{
+  background: #fff;
+  border-radius: 100%;
+  color: #222;
+  font-size: 1.5em;
+  line-height: 30px;
+  padding: 0 7px 4px 6px;
+}
+
+.card .back
+{
+  transform: rotateY( 180deg);
+}
+
+.card .back a
+{
+  padding: 0.3em 0.5em;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 1px;
+  font-size: 0.9em;
+  transition: all 0.2s ease 0s;
+}
+
+.card .back a:hover
+{
+  background: #fff;
+  color: #333;
+  text-shadow: 0 0 1px #333;
+}
+
+
+.cardBox .card .back
+{
+  background: #087275;
+}
+
+
+.btn
+{
+	border:0;
+	font-family: 'Play', sans-serif;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #3498db;
+	padding: 14px 40px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+
+.btn:hover
+{
+	background: #3498db;
+}
+
+
+
+@-webkit-keyframes anim
+{
+	from
+	{
+		transform: rotateY( 180deg);
+	}
+	to
+	{
+		transform: rotateY( 0deg);
+	}
+}
+
+@keyframes anim {
+	from
+	{
+		transform: rotateY( 180deg);
+	}
+	to
+	{
+		transform: rotateY( 0deg);
+	}
+}
+
+@media screen and (max-width: 767px)
+{
+	.cardBox
+	{
+		margin-left: 2.8%;
+		margin-top: 3%;
+		width: 46%;
+	}
+	.card
+	{
+		height: 285px;
+	}
+	.cardBox:last-child
+	{
+		margin-bottom: 3%;
+	}
+}
+
+@media screen and (max-width: 480px)
+{
+	.cardBox
+	{
+		width: 94.5%;
+	}
+	.card
+	{
+		height: 260px;
+	}
+}

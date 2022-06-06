@@ -29,8 +29,21 @@
 			</div>
 			<a href="contact.php">CONTACT</a>
 			<a href="#about" class="current" >ABOUT</a>
-			<a href="login.php">LOGIN</a>
-			<a href="registration.php">REGISTRATION</a>
+			<?php 
+				if( isset($_SESSION['userIdentity']) && !empty($_SESSION['userIdentity']) )
+				{
+					?>
+						 <a href="logout.php">Logout</a>
+					<?php 
+				}
+				else
+				{ 
+					?>
+						 <a href="login.php" class="current">LOGIN</a>
+						 <a href="registration.php">REGISTRATION</a>
+					<?php 
+				} 
+			?>
 			<a href="javascript:void(0);" class="icon" onclick="swap()">
 			<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 		</div><br/><br/><br/>

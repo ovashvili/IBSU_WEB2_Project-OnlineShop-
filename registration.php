@@ -1,5 +1,9 @@
 <?php
-require_once('config.php');
+	require_once('config.php');
+	session_start();
+	if(isset($_SESSION['userIdentity'])){
+		header("Location: index.php");
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,8 +34,21 @@ require_once('config.php');
 				</div>
 				<a href="contact.php">CONTACT</a>
 				<a href="about.php">ABOUT</a>
-				<a href="login.php">LOGIN</a>
-				<a href="registration.php" class="current">REGISTRATION</a>
+				<?php 
+					if( isset($_SESSION['userIdentity']) && !empty($_SESSION['userIdentity']) )
+					{
+						?>
+							 <a href="logout.php">Logout</a>
+						<?php 
+					}
+					else
+					{ 
+						?>
+							 <a href="login.php">LOGIN</a>
+							 <a href="registration.php" class="current">REGISTRATION</a>
+						<?php 
+					} 
+				?>
 				<a href="javascript:void(0);" class="icon" onclick="swap()">
 				<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 		</div><br/>
@@ -146,22 +163,24 @@ require_once('config.php');
 						type: 'POST',
 						url: '../process.php',
 						data: {firstname: firstname, lastname: lastname, username: username, city: city, address: address, email: email,phone: phone,password: password},
-						success: function(data){
-						Swal.fire({
+						
+						success: function (data) {
+							swal.fire({
 									'title': 'Successful',
 									'text': data,
 									'type': 'success'
-									})
-								
+							}).then(function() {
+								window.location = "login.php";
+							});
 						},
-						error: function(data){
+						error: function (xhr, ajaxOptions, thrownError) {
 							Swal.fire({
 									'title': 'Errors',
 									'text': 'There were errors while saving the data.',
 									'type': 'error'
-									})
+							})
 						}
-					});
+					})
 
 					
 				}else{

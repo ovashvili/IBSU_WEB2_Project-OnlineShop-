@@ -1,0 +1,1 @@
+After clicking an item to buy, the customers are able to use the promo codes for discount. We have created 2 promo codes: test, ibsu (test - 30%, ibsu - 50%).

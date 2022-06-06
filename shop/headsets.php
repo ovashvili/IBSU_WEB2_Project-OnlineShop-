@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -33,14 +36,14 @@
 				if( isset($_SESSION['userIdentity']) && !empty($_SESSION['userIdentity']) )
 				{
 					?>
-						 <a href="logout.php">Logout</a>
+						 <a href="../logout.php">Logout</a>
 					<?php 
 				}
 				else
 				{ 
 					?>
-						 <a href="login.php">LOGIN</a>
-						 <a href="registration.php">REGISTRATION</a>
+						 <a href="../login.php">LOGIN</a>
+						 <a href="../registration.php">REGISTRATION</a>
 					<?php 
 				} 
 			?>

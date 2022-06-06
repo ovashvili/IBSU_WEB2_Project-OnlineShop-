@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -39,7 +42,7 @@
 				else
 				{ 
 					?>
-						 <a href="login.php" class="current">LOGIN</a>
+						 <a href="login.php">LOGIN</a>
 						 <a href="registration.php">REGISTRATION</a>
 					<?php 
 				} 

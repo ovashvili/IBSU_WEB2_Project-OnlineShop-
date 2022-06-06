@@ -17,7 +17,7 @@ function checkout(clicked_id)
 	localStorage.setItem("name", name);
 	localStorage.setItem("price", price);
 	localStorage.setItem("imgUrl", imgUrl);
-	window.location = "../checkout.html";
+	window.location = "../checkout.php";
 }
 
 function getprod()

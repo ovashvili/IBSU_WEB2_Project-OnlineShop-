@@ -42,7 +42,7 @@
 			?>
 				  <a href="logout.php">Logout</a>
 			<?php }else{ ?>
-				 <a href="login.php">LOGIN</a>
+				 <a href="login.php" class="current">LOGIN</a>
 			     <a href="registration.php">REGISTRATION</a>
 			<?php } ?>
 			
@@ -87,7 +87,10 @@
 						error: function(data){
 							alert('there were erros while doing the operation.');
 						}
-					});
+					})
+					.then(function() {
+						window.location = "login.php";
+					});;
 
 				});
 			});
